@@ -13,7 +13,7 @@ permalink: /
 <section class="home-collections" aria-label="Collections">
   <a href="{{ '/acrylic/' | relative_url }}" class="collection-card">
     <div class="collection-card__bg"
-         style="background-image: url('{{ '/assets/img/Acrylic-BeigeLeaves.jpg' | relative_url }}')">
+         style="background-image: url('{{ '/assets/img/IllustrationAcrylic.png' | relative_url }}')">
     </div>
     <div class="collection-card__body">
       <h2 class="collection-card__title">Acrylic Paintings</h2>
@@ -23,7 +23,7 @@ permalink: /
 
   <a href="{{ '/inktober2025/' | relative_url }}" class="collection-card">
     <div class="collection-card__bg"
-         style="background-image: url('{{ '/assets/img/Inktober2025-week01.jpg' | relative_url }}')">
+         style="background-image: url('{{ '/assets/img/IllustrationInktober.png' | relative_url }}')">
     </div>
     <div class="collection-card__body">
       <h2 class="collection-card__title">Inktober 2025</h2>
