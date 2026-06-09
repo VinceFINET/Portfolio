@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Art Portfolio
-description: Paintings and illustrations — acrylic on canvas, ink on paper.
+title: Vincent's Art Portfolio
+description: Vincent's Paintings and illustrations — acrylic on canvas, ink on paper.
 permalink: /
 ---
 
@@ -21,13 +21,13 @@ permalink: /
     </div>
   </a>
 
-  <a href="{{ '/inktober2025/' | relative_url }}" class="collection-card">
+  <a href="{{ '/inktober/' | relative_url }}" class="collection-card">
     <div class="collection-card__bg"
          style="background-image: url('{{ '/assets/img/IllustrationInktober.png' | relative_url }}')">
     </div>
     <div class="collection-card__body">
-      <h2 class="collection-card__title">Inktober 2025</h2>
-      <span class="collection-card__meta">31 days &middot; 18 compilations</span>
+      <h2 class="collection-card__title">Inktober</h2>
+      <span class="collection-card__meta">Inktober 2025: 31 daily and 18 weekly drawings over the year 2025</span>
     </div>
   </a>
 </section>

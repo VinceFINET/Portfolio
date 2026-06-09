@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Inktober 2025
-description: Thirty-one days of ink — daily prompt drawings and weekly sketchbook compilations from October 2025.
-permalink: /inktober2025/
+title: Inktober
+description: Inktober is a drawing challenge
+permalink: /inktober/
 ---
 
 <header class="page-header">
@@ -10,20 +10,19 @@ permalink: /inktober2025/
   <p class="page-header__description">{{ page.description }}</p>
 </header>
 
-<section aria-labelledby="section-weeks">
+<section aria-labelledby="section-days">
   <div class="section-header">
-    <h2 class="section-header__title" id="section-weeks">Weekly Compilations</h2>
+    <h2 class="section-header__title" id="section-days">Inktober 2025 Daily Drawings</h2>
   </div>
-
-  <div class="gallery-grid gallery-grid--wide" role="list">
-  {% assign week_images = site.static_files
-       | where_exp: "f", "f.path contains 'Inktober2025-week'"
+  <div class="gallery-grid gallery-grid--dense" role="list">
+  {% assign day_images = site.static_files
+       | where_exp: "f", "f.path contains 'Inktober2025-day'"
        | sort: "name" %}
-  {% for img in week_images %}
+  {% for img in day_images %}
   {% assign caption = img.basename | split: "-" | last %}
     <a class="gallery-item glightbox"
        href="{{ img.path | relative_url }}"
-       data-gallery="inktober-weeks"
+       data-gallery="inktober-days"
        data-title="{{ caption }}"
        role="listitem"
        aria-label="{{ caption }}">
@@ -38,20 +37,19 @@ permalink: /inktober2025/
 
 <hr class="section-divider">
 
-<section aria-labelledby="section-days">
+<section aria-labelledby="section-weeks">
   <div class="section-header">
-    <h2 class="section-header__title" id="section-days">Daily Drawings</h2>
+    <h2 class="section-header__title" id="section-weeks">Inktober 2025 Weekly Drawings</h2>
   </div>
-
-  <div class="gallery-grid gallery-grid--dense" role="list">
-  {% assign day_images = site.static_files
-       | where_exp: "f", "f.path contains 'Inktober2025-day'"
+  <div class="gallery-grid gallery-grid--wide" role="list">
+  {% assign week_images = site.static_files
+       | where_exp: "f", "f.path contains 'Inktober2025-week'"
        | sort: "name" %}
-  {% for img in day_images %}
+  {% for img in week_images %}
   {% assign caption = img.basename | split: "-" | last %}
     <a class="gallery-item glightbox"
        href="{{ img.path | relative_url }}"
-       data-gallery="inktober-days"
+       data-gallery="inktober-weeks"
        data-title="{{ caption }}"
        role="listitem"
        aria-label="{{ caption }}">
