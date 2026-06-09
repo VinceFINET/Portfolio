@@ -141,7 +141,7 @@ img {
 .collection-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 6 / 7;
   display: block;
   background: var(--fg);
   color: white;
