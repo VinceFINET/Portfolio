@@ -1,0 +1,23 @@
+title: "Art Portfolio"
+description: "Paintings and illustrations — acrylic on canvas, ink on paper."
+author: "Vincent FINET"
+
+# GitHub Pages URL settings.
+url: "https://vincefinet.github.io"
+baseurl: "/Portfolio"
+
+# Build settings — no gem theme, just our custom layouts
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins: []
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.gemspec"
+  - README.md
+  - .DS_Store
+  - "**/.DS_Store"

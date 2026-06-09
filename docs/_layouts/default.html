@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- Fonts: Cormorant Garamond (editorial serif) + Inter (clean sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- GLightbox for fullscreen image viewing -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3/dist/css/glightbox.min.css">
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <ul class="site-nav-links">
+        <li>
+          <a href="{{ '/acrylic/' | relative_url }}"
+             {% if page.url == '/acrylic/' %}class="active"{% endif %}>
+            Acrylic
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/inktober2025/' | relative_url }}"
+             {% if page.url == '/inktober2025/' %}class="active"{% endif %}>
+            Inktober 2025
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ site.time | date: "%Y" }}{% if site.author and site.author != "" %} {{ site.author }}{% endif %}</p>
+  </footer>
+
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3/dist/js/glightbox.min.js"></script>
+  <script>
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+
+    // Convert CamelCase image titles into spaced words for display
+    document.querySelectorAll('.gallery-caption, .glightbox').forEach(el => {
+      const t = el.dataset.title || el.textContent;
+      if (t) {
+        const spaced = t.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([0-9]+)/g, ' $1').trim();
+        if (el.dataset.title) el.dataset.title = spaced;
+        if (el.classList.contains('gallery-caption')) el.textContent = spaced;
+      }
+    });
+  </script>
+</body>
+</html>
